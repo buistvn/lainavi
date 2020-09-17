@@ -18,25 +18,25 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
+    // Checks to see if user sent a command
     if (!message.content.startsWith(prefix) || message.author.bot) {
         return;
     }
-    
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
 
-    // Aliases
+    // Allows for some commands to be triggered in multiple ways with aliases
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if (!command) {
         return;
     }
 
-    // Server only
+    // Notifies user if the command is for servers only
     if (command.guildOnly && message.channel.type === 'dm') {
         return message.reply('I can\'t execute that command inside DMs!');
     }
 
-    // Usage
+    // Notifies user of what the command's usage
     if (command.args && !args.length) {
         let reply = `You didn't provide any arguments, ${message.author}!`;
         if (command.usage) {
@@ -45,7 +45,7 @@ client.on('message', message => {
         return message.channel.send(reply);
     }
 
-    // Cooldowns
+    // Accounts for cooldowns (default cooldown is 3 seconds)
     if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Discord.Collection());
     }
@@ -60,7 +60,7 @@ client.on('message', message => {
         }
     }
 
-    // 
+    // Catches and reports an error
     try {
         command.execute(message, args);
     } catch (error) {

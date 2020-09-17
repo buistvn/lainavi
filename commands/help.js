@@ -2,10 +2,10 @@ const { prefix } = require('../config.json');
 
 module.exports = {
     name: 'help',
-    description: 'Help',
+    description: 'Shows list of commands',
     aliases: ['commands'],
     usage: '[command name]',
-    cooldown: 5,
+    cooldown: 10,
     execute(message, args) {
         const data = [];
         const { commands } = message.client;

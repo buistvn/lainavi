@@ -1,6 +1,9 @@
 module.exports = {
-    name: 'prune',
-    description: 'Message delete',
+    name: 'delete',
+    description: 'Deletes a number of messages (limit 100)',
+    aliases: ['purge'],
+    usage: '[number of messages]',
+    cooldown: 5,
     execute(message, args) {
         const amount = parseInt(args[0]) + 1;
         if (isNaN(amount)) {
@@ -11,7 +14,7 @@ module.exports = {
         }
         message.channel.bulkDelete(amount, true).catch(err => {
             console.error(err);
-            message.channel.send('there was an error trying to prune messages in this channel!');
+            message.channel.send('there was an error trying to delete messages in this channel!');
         });
     }
 }
