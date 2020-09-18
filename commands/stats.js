@@ -1,4 +1,4 @@
-process.env.LEAGUE_API_PLATFORM_ID = 'na1'
+process.env.LEAGUE_API_PLATFORM_ID = 'NA1'
 
 const { key } = require('../config.json');
 const LeagueJS = require('leaguejs');
@@ -11,6 +11,7 @@ module.exports = {
     usage: '[player name (NA region)]',
     cooldown: 10,
     async execute(message, args) {
+        const data = [];
         var name;
 
         if (!args.length) {
@@ -30,13 +31,12 @@ module.exports = {
                 console.error(err);
                 return message.reply('that player name doesn\'t exist!');
             });
-        
+        data.push(`${summonerData.name}'s Highest Mastery Champions`);
         var masteryData = await league.ChampionMastery.gettingBySummoner(summonerData.id, "NA1");
-        
         for (var j = 0; j < 10; j++) {
             var mastery = masteryData[j];
             var champ = getChampionName(mastery.championId);
-            console.log(j + 1, champ, mastery.championPoints, mastery.championLevel);
+            data.push(`${j + 1} ${champ} ${mastery.championPoints} ${mastery.championLevel}`);
         }
         
         /*
@@ -45,9 +45,10 @@ module.exports = {
         console.log(matchlist.endIndex);
         */
         /*
-        for (var j = 0; j < ; j++) {
+        for (var k = 0; k < ; k++) {
 
         }
         */
+        message.channel.send(data, { split: true });
     }
 }
