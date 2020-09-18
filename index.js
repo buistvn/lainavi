@@ -22,11 +22,13 @@ client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) {
         return;
     }
+
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
 
     // Allows for some commands to be triggered in multiple ways with aliases
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+
     if (!command) {
         return;
     }
@@ -39,9 +41,11 @@ client.on('message', message => {
     // Notifies user of what the command's usage
     if (command.args && !args.length) {
         let reply = `You didn't provide any arguments, ${message.author}!`;
+
         if (command.usage) {
             reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
         }
+
         return message.channel.send(reply);
     }
 
@@ -49,11 +53,14 @@ client.on('message', message => {
     if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Discord.Collection());
     }
+
     const now = Date.now();
     const timestamps = cooldowns.get(command.name);
     const cooldownAmount = (command.cooldown || 3) * 1000;
+
     if (timestamps.has(message.author.id)) {
         const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
+        
         if (now < expirationTime) {
             const timeLeft = (expirationTime - now) / 1000;
             return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
