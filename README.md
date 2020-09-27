@@ -1,3 +1,5 @@
+# Lainavi
+
 Requires a config.json file in the main directory.
 ```
 {
@@ -8,9 +10,7 @@ Requires a config.json file in the main directory.
 ```
 Prefix will be a symbol of your choice (Example: ! or ?).<br />
 Token generated from [Discord Developer Portal](https://discord.com/developers/applications/).<br />
-Key generated from [Riot Developer Portal](https://developer.riotgames.com/) (expires every 24 hours).
-
-## Available Scripts
+Key generated from [Riot Developer Portal](https://developer.riotgames.com/).<br />
 
 In the project directory, you can run:
 
