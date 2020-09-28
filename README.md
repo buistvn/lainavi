@@ -1,4 +1,5 @@
 # Lainavi
+Lainavi is a Discord bot with features and commands for moderation, alerts, and gaming.<br />
 
 Requires a config.json file in the main directory.
 ```
@@ -17,4 +18,4 @@ In the project directory, you can run:
 ### `node index.js`
 
 Starts up the bot.<br />
-Use ?help to view the list of commands.
+Use {prefix}help to view the list of commands.
