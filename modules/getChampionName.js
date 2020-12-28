@@ -156,24 +156,24 @@ function getChampionName(id) {
     }
 }
 
-// Better method WIP
 /*
 function getChampionName(id) {
-    var version = "10.19.1"
+    // Latest version found at https://developer.riotgames.com/docs/lol#data-dragon
+    var version = "10.25.1"
+    var championName;
 
     request('http://ddragon.leagueoflegends.com/cdn/' + version + '/data/en_US/champion.json', function (error, response, body) {
         var list = JSON.parse(body);
         var championList = list.data;
-        var championName = null;
 
         for (var i in championList) {
             if (championList[i].key == id) {
                 championName = championList[i].name;
-                console.log(championName);
                 return championName;
             }
         }
     });
+    return championName;
 }
 */
 

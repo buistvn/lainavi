@@ -14,7 +14,7 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
-    console.log('Ready!');
+    console.log('Online!');
 });
 
 client.on('message', message => {
