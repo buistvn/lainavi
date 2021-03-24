@@ -1,5 +1,5 @@
 <!-- ABOUT THE PROJECT -->
-## Lainavi
+# Lainavi
 
 ![Project Screenshot][project-screenshot]
 
@@ -15,7 +15,7 @@ Lainavi is a multi-function Discord bot that was built for the purpose of simpli
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running, follow these simple steps.
+To get a local copy up and running, follow these instructions.
 
 ### Prerequisites
 
@@ -23,7 +23,7 @@ To get a local copy up and running, follow these simple steps.
   ```sh
   npm install npm@latest -g
   ```
-* config.json file in the main directory
+* Create a config.json file in the main directory
   ```
   {
       "prefix": "PREFIX GOES HERE",
@@ -41,7 +41,7 @@ To get a local copy up and running, follow these simple steps.
    ```sh
    git clone https://github.com/buistvn/lainavi.git
    ```
-2. Install NPM packages
+2. Install packages
    ```sh
    npm install
    ```
@@ -55,7 +55,7 @@ To get a local copy up and running, follow these simple steps.
   ```sh
   node index.js
   ```
-* View the list of commands
+* View the list of commands in Discord
   ```sh
   {prefix}help
   ```
@@ -63,5 +63,4 @@ To get a local copy up and running, follow these simple steps.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [project-screenshot]: images/Lainavi.png
