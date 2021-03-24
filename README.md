@@ -27,8 +27,8 @@ To get a local copy up and running, follow these simple steps.
   ```
   {
       "prefix": "PREFIX GOES HERE",
-	    "token": "TOKEN GOES HERE",
-	    "key": "KEY GOES HERE"
+      "token": "TOKEN GOES HERE",
+      "key": "KEY GOES HERE"
   }
   ```
 * Choose a prefix (e.g., !, ?, or -)
