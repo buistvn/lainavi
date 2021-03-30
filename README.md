@@ -1,11 +1,14 @@
-<!-- ABOUT THE PROJECT -->
+<!-- PROJECT -->
 # Lainavi
 
 ![Project Screenshot][project-screenshot]
 
 Lainavi is a multi-function Discord bot that was built for the purpose of simplifying tasks. It comes with custom commands for moderation, alerts, and gaming. Using the Riot Games API, the bot can access and display data about players' stats for League of Legends.
 
-### Built With
+
+
+<!-- BUILT WITH -->
+## Built With
 
 * [discord.js](https://discord.js.org/#/)
 * [LeagueJS](https://github.com/Colorfulstan/LeagueJS)
@@ -62,5 +65,5 @@ To get a local copy up and running, follow these instructions.
 
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
+<!-- LINKS & IMAGES -->
 [project-screenshot]: images/Lainavi.png
