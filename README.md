@@ -1,46 +1,25 @@
 <!-- PROJECT -->
-# Lainavi
+# Project Name
 
 ![Project Screenshot][project-screenshot]
 
-Lainavi is a multi-function Discord bot that was built for the purpose of simplifying tasks. It comes with custom commands for moderation, alerts, and gaming. Using the Riot Games API, the bot can access and display data about players' stats for League of Legends.
+Lainavi is a Discord bot that was developed with the purpose of simplifying tasks. It comes with custom commands for moderation, alerts, and gaming. Using the [Riot Games API](https://developer.riotgames.com/), the bot can access and display data about players' stats for League of Legends.
 
 
 
-<!-- BUILT WITH -->
-## Built With
+<!-- TECHNOLOGIES -->
+## Technologies
 
 * [discord.js](https://discord.js.org/#/)
-* [LeagueJS](https://github.com/Colorfulstan/LeagueJS)
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
+<!-- INSTALLATION -->
+## Installation
 
-To get a local copy up and running, follow these instructions.
+To set up a local copy of the project, follow these steps.
 
-### Prerequisites
-
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-* Create a config.json file in the main directory
-  ```
-  {
-      "prefix": "PREFIX GOES HERE",
-      "token": "TOKEN GOES HERE",
-      "key": "KEY GOES HERE"
-  }
-  ```
-* Choose a prefix (e.g., !, ?, or -)
-* Generate a token from [Discord Developer Portal](https://discord.com/developers/applications/)
-* Generate a key from [Riot Developer Portal](https://developer.riotgames.com/)
-
-### Installation
-
-1. Clone the repo
+1. Clone the repository
    ```sh
    git clone https://github.com/buistvn/lainavi.git
    ```
@@ -48,22 +27,34 @@ To get a local copy up and running, follow these instructions.
    ```sh
    npm install
    ```
+3. Generate a token from [Discord Developer Portal](https://discord.com/developers/applications)
+4. Generate an API key from [Riot Developer Portal](https://developer.riotgames.com/)
+5. Create a `config.json` file in the root directory with the configuration variables
+   ```sh
+   {
+       "prefix": "YOUR_PREFIX_GOES_HERE",
+       "token": "YOUR_TOKEN_GOES_HERE",
+       "key": "YOUR_API_KEY_GOES_HERE"
+   }
+   ```
 
 
 
 <!-- USAGE -->
 ## Usage
 
-* Start up the bot
-  ```sh
-  node index.js
-  ```
-* View the list of commands in Discord
-  ```sh
-  {prefix}help
-  ```
+To run the project, follow these steps.
+
+1. Start up the bot
+   ```sh
+   node index.js
+   ```
+2. View the list of commands in the Discord server's text channel
+   ```sh
+   !help
+   ```
 
 
 
 <!-- LINKS & IMAGES -->
-[project-screenshot]: images/Lainavi.png
+[project-screenshot]: /docs/lainavi.png
