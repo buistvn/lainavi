@@ -1,5 +1,5 @@
 <!-- PROJECT -->
-# Project Name
+# Lainavi
 
 ![Project Screenshot][project-screenshot]
 
@@ -51,7 +51,7 @@ To run the project, follow these steps.
    ```
 2. View the list of commands in the Discord server's text channel
    ```sh
-   !help
+   {prefix}help
    ```
 
 
