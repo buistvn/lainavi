@@ -4,11 +4,13 @@ const { prefix, token } = require('./config.json');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs
+    .readdirSync('./commands')
+    .filter((file) => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	client.commands.set(command.name, command);
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.name, command);
 }
 
 const cooldowns = new Discord.Collection();
@@ -17,7 +19,7 @@ client.once('ready', () => {
     console.log('Online!');
 });
 
-client.on('message', message => {
+client.on('message', (message) => {
     // Checks to see if user sent a command
     if (!message.content.startsWith(prefix) || message.author.bot) {
         return;
@@ -27,7 +29,11 @@ client.on('message', message => {
     const commandName = args.shift().toLowerCase();
 
     // Allows for some commands to be triggered in multiple ways with aliases
-    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    const command =
+        client.commands.get(commandName) ||
+        client.commands.find(
+            (cmd) => cmd.aliases && cmd.aliases.includes(commandName)
+        );
 
     if (!command) {
         return;
@@ -35,7 +41,7 @@ client.on('message', message => {
 
     // Notifies user if the command is for servers only
     if (command.guildOnly && message.channel.type === 'dm') {
-        return message.reply('I can\'t execute that command inside DMs!');
+        return message.reply("I can't execute that command inside DMs!");
     }
 
     // Notifies user of what the command's usage
@@ -59,11 +65,18 @@ client.on('message', message => {
     const cooldownAmount = (command.cooldown || 3) * 1000;
 
     if (timestamps.has(message.author.id)) {
-        const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
-        
+        const expirationTime =
+            timestamps.get(message.author.id) + cooldownAmount;
+
         if (now < expirationTime) {
             const timeLeft = (expirationTime - now) / 1000;
-            return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
+            return message.reply(
+                `please wait ${timeLeft.toFixed(
+                    1
+                )} more second(s) before reusing the \`${
+                    command.name
+                }\` command.`
+            );
         }
     }
 
