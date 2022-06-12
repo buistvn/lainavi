@@ -10,6 +10,7 @@ Lainavi is a Discord bot that was developed with the purpose of simplifying task
 <!-- TECHNOLOGIES -->
 ## Technologies
 
+* [Node.js](https://nodejs.org/en/)
 * [discord.js](https://discord.js.org/#/)
 
 
@@ -49,9 +50,9 @@ To run the project, follow these steps.
    ```sh
    node index.js
    ```
-2. View the list of commands in the Discord server's text channel
+2. View the list of commands in the Discord server's text channel (prefix may be different depending on what was set in `config.json`)
    ```sh
-   {prefix}help
+   !help
    ```
 
 
